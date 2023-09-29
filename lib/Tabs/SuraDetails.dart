@@ -10,6 +10,10 @@ class SuraDetails extends StatelessWidget {
         AssetImage('assets/images/img.png'))
       ),
       child: Scaffold(
+        appBar: AppBar(
+          title:Text('Islami',style:
+          Theme.of(context).textTheme.bodyLarge,)
+        ),
 
 
       ),

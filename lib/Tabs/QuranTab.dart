@@ -27,13 +27,7 @@ class _QuranTabState extends State<QuranTab> {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      InkWell(
-          onTap:(){
-            Navigator.pushNamed(context, SuraDetails.routeName);
-
-          },
-          child:
-      Center(child: Image.asset('assets/images/Quran3.png',width: 205,))),
+      Center(child: Image.asset('assets/images/Quran3.png',width: 205,)),
       Divider(
         color: MyThemeData.primaryColor,
         thickness: 3,
@@ -54,11 +48,16 @@ class _QuranTabState extends State<QuranTab> {
             indent: 40,
           ),
           itemBuilder:(context,index){
-          return Center(
-            child: Text(SuraName[index],style:
-            Theme.of(context).textTheme.bodySmall!.copyWith(
-              color: Colors.black
-            ),),
+          return InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, SuraDetails.routeName);
+            },
+            child: Center(
+              child: Text(SuraName[index],style:
+              Theme.of(context).textTheme.bodySmall!.copyWith(
+                color: Colors.black
+              ),),
+            ),
           );
 
         },itemCount: SuraName.length,),
