@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/SuraModel.dart';
 import 'package:islami_app/Tabs/SuraDetails.dart';
 
 import '../myThemeData.dart';
@@ -26,6 +27,7 @@ class _QuranTabState extends State<QuranTab> {
 
   @override
   Widget build(BuildContext context) {
+
     return Column(children: [
       Center(child: Image.asset('assets/images/Quran3.png',width: 205,)),
       Divider(
@@ -50,8 +52,12 @@ class _QuranTabState extends State<QuranTab> {
           itemBuilder:(context,index){
           return InkWell(
             onTap: () {
-              Navigator.pushNamed(context, SuraDetails.routeName);
-            },
+              Navigator.pushNamed(context,
+                  SuraDetails.routeName,
+                arguments: SuraModel(index, SuraName[index])
+              );
+              
+              },
             child: Center(
               child: Text(SuraName[index],style:
               Theme.of(context).textTheme.bodySmall!.copyWith(
