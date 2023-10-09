@@ -51,20 +51,21 @@ class _SuraDetailsState extends State<SuraDetails> {
                   indent: 40,
                 ),
                 itemBuilder: (context,index){
-                   return Text(verses[index],
-                       textAlign: TextAlign.center
-                       ,style:
-                     Theme.of(context).textTheme.bodySmall!.copyWith(
-                       fontSize: 20,
-                     )
-                     ,);
+                   return Directionality(
+                     textDirection: TextDirection.rtl,
+                     child: Text(verses[index],
+                         textAlign: TextAlign.center
+                         ,style:
+                       Theme.of(context).textTheme.bodySmall!.copyWith(
+                         fontSize: 20,
+                       )
+                       ,),
+                   );
                 },
               itemCount: verses.length,
             ),
           ),
         ) ,
-
-
       ),
     );
 

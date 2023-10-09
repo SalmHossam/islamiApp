@@ -34,10 +34,39 @@ class MyThemeData{
         backgroundColor: primaryColor,
       unselectedItemColor: Colors.white,
 
-
-
-
-
     )
+  );
+  static ThemeData darkTheme=ThemeData(
+      textTheme:TextTheme(
+        bodySmall: GoogleFonts.elMessiri(
+            fontSize: 20,
+            fontWeight: FontWeight.w400,
+            color: Colors.black
+        ),
+        bodyMedium: GoogleFonts.elMessiri(
+            fontSize: 25,
+            fontWeight: FontWeight.w700,
+            color: Colors.white
+        ) ,
+        bodyLarge: GoogleFonts.elMessiri(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+            color: Colors.black
+
+        ),
+      ),
+      scaffoldBackgroundColor:Colors.transparent,
+      appBarTheme: AppBarTheme(
+          color:Colors.transparent,
+          elevation: 0.0,
+          centerTitle: true
+      ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        type: BottomNavigationBarType.shifting,
+        selectedItemColor: Colors.black,
+        backgroundColor: primaryColor,
+        unselectedItemColor: Colors.white,
+
+      )
   );
 }
