@@ -30,13 +30,7 @@ class HadeathDetails extends StatelessWidget {
                   color: MyThemeData.primaryColor,
                 )
             ) ,
-            child: ListView.separated(separatorBuilder:
-                (context, index) => Divider(
-              color: MyThemeData.primaryColor,
-              thickness: 1,
-              endIndent: 40,
-              indent: 40,
-            ),
+            child: ListView.builder(
               itemBuilder: (context,index){
                 return Directionality(
                   textDirection: TextDirection.rtl,
