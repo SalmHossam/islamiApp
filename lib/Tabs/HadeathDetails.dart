@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/hadethModel.dart';
+import 'package:islami_app/Models/hadethModel.dart';
 
-import '../myThemeData.dart';
+import '../Style/myThemeData.dart';
 
 class HadeathDetails extends StatelessWidget {
   const HadeathDetails({super.key});

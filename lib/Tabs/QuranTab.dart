@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/SuraModel.dart';
+import 'package:islami_app/Models/SuraModel.dart';
 import 'package:islami_app/Tabs/SuraDetails.dart';
 
-import '../myThemeData.dart';
+import '../Style/myThemeData.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranTab extends StatefulWidget {
   static const String routeName=" QuranTab";
@@ -34,7 +35,7 @@ class _QuranTabState extends State<QuranTab> {
         color: MyThemeData.primaryColor,
         thickness: 3,
       ),
-      Text('Sura Name',style:
+      Text(AppLocalizations.of(context)!.suraName,style:
       Theme.of(context).textTheme.bodyMedium!.copyWith(
         color: Colors.black
       ),),

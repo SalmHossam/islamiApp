@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app/Tabs/HadeathDetails.dart';
-import 'package:islami_app/hadethModel.dart';
-import 'package:islami_app/myThemeData.dart';
+import 'package:islami_app/Models/hadethModel.dart';
+import 'package:islami_app/Style/myThemeData.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AhadethTab extends StatelessWidget {
   static const String routeName=" AhadethTab";
@@ -15,7 +16,7 @@ class AhadethTab extends StatelessWidget {
       children: [
         Center(child: Image.asset('assets/images/Ahadeath.png')),
         Divider(color: MyThemeData.primaryColor,thickness: 2,),
-        Text('Ahadeath',style:Theme.of(context).
+        Text(AppLocalizations.of(context)!.ahadeathName,style:Theme.of(context).
                  textTheme.bodyMedium!.copyWith(
           color: Colors.black
         ),),

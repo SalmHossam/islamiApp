@@ -5,8 +5,8 @@ import 'package:islami_app/Tabs/QuranTab.dart';
 import 'package:islami_app/Tabs/RadioTab.dart';
 import 'package:islami_app/Tabs/SebhaTab.dart';
 import 'package:islami_app/Tabs/SettingsTab.dart';
-import 'package:islami_app/myThemeData.dart';
-
+import 'package:islami_app/Style/myThemeData.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class HomeScreen extends StatefulWidget {
   static const String routeName="HomeScreen";
 
@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
         Scaffold(
           backgroundColor:MyThemeData.lightTheme.scaffoldBackgroundColor,
         appBar: AppBar(
-              title:Text("Islami",style:Theme.of(context).textTheme.bodyLarge
+              title:Text(AppLocalizations.of(context)!.appTitle,style:Theme.of(context).textTheme.bodyLarge
               ),
         ),
           body: tabs[index],

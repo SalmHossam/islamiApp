@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/myThemeData.dart';
-
+import 'package:islami_app/Style/myThemeData.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class RadioTab extends StatelessWidget {
   static const String routeName=" RadioTab";
 
@@ -12,7 +12,7 @@ class RadioTab extends StatelessWidget {
           SizedBox(height: 100,),
           Image(image: AssetImage('assets/images/RadioImage.png')),
           SizedBox(height: 40,),
-          Text('اذاعة القرآن الكريم',style:Theme.of(context).textTheme.bodyLarge,),
+          Text(AppLocalizations.of(context)!.radio,style:Theme.of(context).textTheme.bodyLarge,),
           SizedBox(height: 40,),
           Row(
 
