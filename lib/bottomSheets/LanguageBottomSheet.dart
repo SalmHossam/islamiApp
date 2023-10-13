@@ -26,7 +26,8 @@ class LanguageBottomSheet extends StatelessWidget {
                   ),),
                   Spacer(),
                   provider.LanguageCode=='ar'? SizedBox.shrink():
-                  Icon(Icons.check,color: provider.LanguageCode=='en'?MyThemeData.primaryColor:MyThemeData.blackColor,),
+                  Icon(Icons.check,color: provider.LanguageCode=='en'?
+                  MyThemeData.primaryColor:MyThemeData.blackColor,),
                 ],
               ),
             ),

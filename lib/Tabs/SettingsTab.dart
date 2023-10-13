@@ -55,7 +55,7 @@ class _SettingsTabState extends State<SettingsTab> {
                   color: Colors.white,
                   border: Border.all(color: MyThemeData.primaryColor)
               ),
-              child: Text('Light',style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Colors.black),),
+              child: Text(provider.modeApp==ThemeMode.dark?'Dark':'Light',style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Colors.black),),
 
             ),
           ),

@@ -23,7 +23,7 @@ class ThemeBottomSheet extends StatelessWidget {
                   children: [
                     Text('Light',style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         color: pro.modeApp==ThemeMode.light?
-                Theme.of(context).colorScheme.background:MyThemeData.blackColor,
+                        MyThemeData.primaryColor:Colors.white,
                     ),),
                     Spacer(),
                     pro.modeApp==ThemeMode.dark?SizedBox.shrink():
@@ -42,7 +42,7 @@ class ThemeBottomSheet extends StatelessWidget {
                   children: [
                     Text('Dark',style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         color: pro.modeApp==ThemeMode.dark?
-                Theme.of(context).colorScheme.background:MyThemeData.blackColor,
+                MyThemeData.yellow:Colors.black,
                     ),),
                     Spacer(),
                     pro.modeApp==ThemeMode.light?SizedBox.shrink():
