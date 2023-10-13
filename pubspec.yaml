@@ -56,6 +56,29 @@ flutter_native_splash:
   android: true
   ios: true
   android_gravity: center
+    #color_android: "#42a5f5"
+    #color_dark_android: "#042a49"
+    #color_ios: "#42a5f5"
+    #color_dark_ios: "#042a49"
+    #color_web: "#42a5f5"
+    #color_dark_web: "#042a49"
+    #image_android: assets/splash-android.png
+    #image_dark_android: assets/splash-invert-android.png
+    #image_ios: assets/splash-ios.png
+    #image_dark_ios: assets/splash-invert-ios.png
+    #image_web: assets/splash-web.gif
+    #image_dark_web: assets/splash-invert-web.gif
+    #background_image_android: "assets/background-android.png"
+    #background_image_dark_android: "assets/dark-background-android.png"
+    #background_image_ios: "assets/background-ios.png"
+    #background_image_dark_ios: "assets/dark-background-ios.png"
+    #background_image_web: "assets/background-web.png"
+    #background_image_dark_web: "assets/dark-background-web.png"
+    #branding_android: assets/brand-android.png
+    #branding_dark_android: assets/dart_dark-android.png
+  #branding_ios: assets/brand-ios.gif
+  #branding_dark_ios: assets/dart_dark-ios.gif
+
 
   android_12:
     color: "#FFFFFF"

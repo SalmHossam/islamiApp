@@ -7,6 +7,9 @@ import 'package:islami_app/Tabs/SebhaTab.dart';
 import 'package:islami_app/Tabs/SettingsTab.dart';
 import 'package:islami_app/Style/myThemeData.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+
+import 'Provider/FirstProvider.dart';
 class HomeScreen extends StatefulWidget {
   static const String routeName="HomeScreen";
 
@@ -19,9 +22,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var pro=Provider.of<FirstProvider>(context);
     return Stack(
       children:[
-        Image.asset('assets/images/img.png',width:double.infinity ,),
+        Image.asset(pro.modeApp==ThemeMode.light?'assets/images/img.png':
+        'assets/images/darkbg.png',width:double.infinity ,),
         Scaffold(
           backgroundColor:MyThemeData.lightTheme.scaffoldBackgroundColor,
         appBar: AppBar(
@@ -36,20 +41,20 @@ class _HomeScreenState extends State<HomeScreen> {
               setState(() {
               });
             },
-              backgroundColor: MyThemeData.primaryColor,
+              backgroundColor: pro.modeApp==ThemeMode.light?MyThemeData.primaryColor:MyThemeData.darkprimaryColor,
                iconSize: 40,
               items: [
             BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/quran2.png')),
-                label: "Qureen", backgroundColor: MyThemeData.primaryColor
+                label: "Qureen", backgroundColor: pro.modeApp==ThemeMode.light?MyThemeData.primaryColor:MyThemeData.darkprimaryColor,
             ),
             BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/sebha.png')),
-                label: "Sebha", backgroundColor: MyThemeData.primaryColor),
+                label: "Sebha", backgroundColor: pro.modeApp==ThemeMode.light?MyThemeData.primaryColor:MyThemeData.darkprimaryColor,),
             BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/Quran.png')),
-                label: "Ahadeth", backgroundColor: MyThemeData.primaryColor),
+                label: "Ahadeth", backgroundColor: pro.modeApp==ThemeMode.light?MyThemeData.primaryColor:MyThemeData.darkprimaryColor,),
             BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/radio.png')),
-                label: "Radio", backgroundColor: MyThemeData.primaryColor),
+                label: "Radio", backgroundColor: pro.modeApp==ThemeMode.light?MyThemeData.primaryColor:MyThemeData.darkprimaryColor,),
                 BottomNavigationBarItem(icon: Icon(Icons.settings),
-                    label: "Setting", backgroundColor: MyThemeData.primaryColor),
+                    label: "Setting", backgroundColor: pro.modeApp==ThemeMode.light?MyThemeData.primaryColor:MyThemeData.darkprimaryColor,),
           ]
 
           ),

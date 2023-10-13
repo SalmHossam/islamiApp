@@ -22,7 +22,8 @@ class _SettingsTabState extends State<SettingsTab> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Language',style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Colors.black),),
+          Text('Language',style: Theme.of(context).textTheme.bodyMedium!.copyWith(color:
+          provider.modeApp==ThemeMode.light?MyThemeData.blackColor:Colors.white,),),
           InkWell(
             onTap:() {
               showLanguageBottomSheet();
@@ -42,7 +43,7 @@ class _SettingsTabState extends State<SettingsTab> {
             ),
           ),
           SizedBox(height: 25,),
-          Text('Theme',style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Colors.black),),
+          Text('Theme',style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: provider.modeApp==ThemeMode.light?MyThemeData.blackColor:Colors.white),),
           InkWell(
             onTap: () {
               showThemeBottomSheet();

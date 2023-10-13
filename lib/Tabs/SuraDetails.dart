@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app/Models/SuraModel.dart';
+import 'package:islami_app/Provider/FirstProvider.dart';
+import 'package:provider/provider.dart';
 
 import '../Style/myThemeData.dart';
 
@@ -18,6 +20,7 @@ class _SuraDetailsState extends State<SuraDetails> {
 
   @override
   Widget build(BuildContext context) {
+    var pro=Provider.of<FirstProvider>(context);
     var args=ModalRoute.of(context)?.settings.arguments as SuraModel;
     if(verses.isEmpty){
       loadFile(args.index);
@@ -25,7 +28,8 @@ class _SuraDetailsState extends State<SuraDetails> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(image:
-        AssetImage('assets/images/img.png'))
+        AssetImage(pro.modeApp==ThemeMode.light?'assets/images/img.png':
+        'assets/images/darkbg.png'))
       ),
       child: Scaffold(
         appBar: AppBar(
@@ -40,12 +44,12 @@ class _SuraDetailsState extends State<SuraDetails> {
             shape:RoundedRectangleBorder(
               borderRadius:BorderRadius.circular(18),
               side: BorderSide(
-                color: MyThemeData.primaryColor,
+                color: pro.modeApp=='light'?MyThemeData.primaryColor:MyThemeData.darkprimaryColor,
               )
             ) ,
             child: ListView.separated(separatorBuilder:
                 (context, index) => Divider(
-                  color: MyThemeData.primaryColor,
+                  color: pro.modeApp=='light'?MyThemeData.primaryColor:MyThemeData.darkprimaryColor,
                   thickness: 1,
                   endIndent: 40,
                   indent: 40,

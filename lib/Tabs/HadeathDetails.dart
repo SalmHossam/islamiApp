@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/Models/hadethModel.dart';
+import 'package:islami_app/Provider/FirstProvider.dart';
+import 'package:provider/provider.dart';
 
 import '../Style/myThemeData.dart';
 
@@ -8,11 +10,13 @@ class HadeathDetails extends StatelessWidget {
   static const String routeName='HadeathDetails';
   @override
   Widget build(BuildContext context) {
+    var pro =Provider.of<FirstProvider>(context);
     var args=ModalRoute.of(context)?.settings.arguments as HadeathModel;
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(image:
-          AssetImage('assets/images/img.png'))
+          AssetImage(pro.modeApp==ThemeMode.light?'assets/images/img.png':
+          'assets/images/darkbg.png'))
       ),
       child: Scaffold(
         appBar: AppBar(
@@ -27,7 +31,7 @@ class HadeathDetails extends StatelessWidget {
             shape:RoundedRectangleBorder(
                 borderRadius:BorderRadius.circular(18),
                 side: BorderSide(
-                  color: MyThemeData.primaryColor,
+                  color: pro.modeApp=='light'?MyThemeData.primaryColor:MyThemeData.darkprimaryColor,
                 )
             ) ,
             child: ListView.builder(

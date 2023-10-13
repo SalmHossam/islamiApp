@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/Provider/FirstProvider.dart';
 import 'package:islami_app/Style/myThemeData.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class SebhaTab extends StatefulWidget {
   static const String routeName=" SebhaTab";
@@ -24,6 +26,7 @@ class _SebhaTabState extends State<SebhaTab> {
 
   @override
   Widget build(BuildContext context) {
+    var provider=Provider.of<FirstProvider>(context);
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Column(
@@ -35,7 +38,8 @@ class _SebhaTabState extends State<SebhaTab> {
               Container(
               child: Align(
                   alignment: Alignment.center,
-                  child: Image.asset('assets/images/headSebha.png',width: 75)),
+                  child: Image.asset(provider.modeApp==
+                      ThemeMode.light?'assets/images/headSebha.png':'assets/images/darkHead.png',width: 75)),
             ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -56,13 +60,14 @@ class _SebhaTabState extends State<SebhaTab> {
                    },
                     child: Transform.rotate(
                         angle: angle,
-                        child: Image.asset('assets/images/bodySebha.png',width: 220,))),
+                        child: Image.asset(provider.modeApp==
+                            ThemeMode.light?'assets/images/bodySebha.png':'assets/images/darkBody.png',width: 220,))),
                 ],
               )],
           ),
           SizedBox(height: 30,),
           Text(AppLocalizations.of(context)!.counter,style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-            color: Colors.black
+            color: provider.modeApp==ThemeMode.light?MyThemeData.blackColor:Colors.white
           ),),
           Padding(
             padding: const EdgeInsets.symmetric(vertical:25,horizontal:25),
@@ -70,7 +75,7 @@ class _SebhaTabState extends State<SebhaTab> {
               width: 60,
               height: 60,
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
-                  color: Color(0xFFB7935F)),
+                  color: provider.modeApp==ThemeMode.light?MyThemeData.primaryColor:MyThemeData.darkprimaryColor),
              child: Center(child: Text(count.toString(),style:Theme.of(context).textTheme.bodySmall,)),
 
             ),
@@ -82,7 +87,7 @@ class _SebhaTabState extends State<SebhaTab> {
               width: 400,
               height: 160,
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),
-                  color: MyThemeData.primaryColor),
+                  color: provider.modeApp==ThemeMode.light?MyThemeData.primaryColor:MyThemeData.yellow),
               child: Text(sebha[i],textAlign: TextAlign.center,
                 style:Theme.of(context).textTheme.bodyMedium,),
 

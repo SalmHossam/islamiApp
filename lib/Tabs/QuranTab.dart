@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/Models/SuraModel.dart';
+import 'package:islami_app/Provider/FirstProvider.dart';
 import 'package:islami_app/Tabs/SuraDetails.dart';
+import 'package:provider/provider.dart';
 
 import '../Style/myThemeData.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -28,24 +30,24 @@ class _QuranTabState extends State<QuranTab> {
 
   @override
   Widget build(BuildContext context) {
-
+    var pro=Provider.of<FirstProvider>(context);
     return Column(children: [
       Center(child: Image.asset('assets/images/Quran3.png',width: 205,)),
       Divider(
-        color: MyThemeData.primaryColor,
+        color: pro.modeApp==ThemeMode.light?MyThemeData.primaryColor:MyThemeData.yellow,
         thickness: 3,
       ),
       Text(AppLocalizations.of(context)!.suraName,style:
       Theme.of(context).textTheme.bodyMedium!.copyWith(
-        color: Colors.black
+        color: pro.modeApp==ThemeMode.light?MyThemeData.blackColor:Colors.white
       ),),
       Divider(
-        color: MyThemeData.primaryColor,
+        color: pro.modeApp==ThemeMode.light?MyThemeData.primaryColor:MyThemeData.yellow,
         thickness: 3,
       ),
       Expanded(
         child: ListView.separated(separatorBuilder:
-          (context, index) => Divider(color: MyThemeData.primaryColor,
+          (context, index) => Divider(color: pro.modeApp==ThemeMode.light?MyThemeData.primaryColor:MyThemeData.yellow,
           thickness: 1,
             endIndent: 40,
             indent: 40,
@@ -62,7 +64,7 @@ class _QuranTabState extends State<QuranTab> {
             child: Center(
               child: Text(SuraName[index],style:
               Theme.of(context).textTheme.bodySmall!.copyWith(
-                color: Colors.black
+                color:pro.modeApp==ThemeMode.light?MyThemeData.blackColor:Colors.white
               ),),
             ),
           );
