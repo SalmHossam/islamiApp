@@ -15,7 +15,7 @@ class MyThemeData{
           error: Colors.red,
           onError: Colors.white,
           background: primaryColor,
-          onBackground: blackColor,
+          onBackground: Colors.black,
           surface: primaryColor,
           onSurface: Colors.white),
       textTheme:TextTheme(

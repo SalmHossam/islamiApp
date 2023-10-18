@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/Provider/FirstProvider.dart';
 import 'package:provider/provider.dart';
-
 import '../Style/myThemeData.dart';
 
 class ThemeBottomSheet extends StatelessWidget {

@@ -22,12 +22,13 @@ class LanguageBottomSheet extends StatelessWidget {
               child: Row(
                 children: [
                   Text('English',style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                    color: provider.LanguageCode=='en'?MyThemeData.primaryColor:MyThemeData.blackColor,
+                    color: provider.LanguageCode=='en'?
+                    Theme.of(context).colorScheme.background:Theme.of(context).colorScheme.onBackground,
                   ),),
                   Spacer(),
                   provider.LanguageCode=='ar'? SizedBox.shrink():
                   Icon(Icons.check,color: provider.LanguageCode=='en'?
-                  MyThemeData.primaryColor:MyThemeData.blackColor,),
+                  Theme.of(context).colorScheme.background:Theme.of(context).colorScheme.onBackground,),
                 ],
               ),
             ),
@@ -39,11 +40,13 @@ class LanguageBottomSheet extends StatelessWidget {
               child: Row(
                 children: [
                   Text('Arabic',style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: provider.LanguageCode=='ar'?MyThemeData.primaryColor:MyThemeData.blackColor,
+                      color: provider.LanguageCode=='ar'?
+                      Theme.of(context).colorScheme.background:Theme.of(context).colorScheme.onBackground,
                   ),),
                   Spacer(),
                   provider.LanguageCode=='en'?SizedBox.shrink():
-                  Icon(Icons.check,color: provider.LanguageCode=='ar'?MyThemeData.primaryColor:MyThemeData.blackColor,)
+                  Icon(Icons.check,color: provider.LanguageCode=='ar'?
+                  Theme.of(context).colorScheme.background:Theme.of(context).colorScheme.onBackground,)
                 ],
               ),
             )
